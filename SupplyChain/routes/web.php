@@ -13,15 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 //Route::resource('admin',AdminController::class);
+
+Route::get('/',AdminController::class .'@dashboard');
+Route::get('/dashboard',AdminController::class .'@dashboard');
+
+
 
 Route::get('/add-dealer',AdminController::class .'@add_dealer');
 
-Route::get('/dashboard',AdminController::class .'@dashboard');
-Route::get('/',AdminController::class .'@dashboard');
+Route::get('/add-item',AdminController::class .'@add_item');
+
+
 
 
 

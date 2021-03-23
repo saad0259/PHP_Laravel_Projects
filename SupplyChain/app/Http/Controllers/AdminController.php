@@ -95,7 +95,7 @@ class AdminController extends Controller
     }
 
     public function add_item(){
-        return view('add-dealer');
+        return view('add-item');
         
 
     }
