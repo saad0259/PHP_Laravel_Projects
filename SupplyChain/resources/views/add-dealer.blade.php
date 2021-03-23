@@ -20,12 +20,12 @@
 
         <div class="form-group col-md-6">
           <label for="exampleInputEmail3">CNIC</label>
-          <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+          <input type="text" class="form-control" id="exampleInputEmail3" placeholder="CNIC">
         </div>
 
         <div class="form-group col-md-6">
             <label for="exampleInputEmail3">Phone</label>
-            <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
+            <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Phone">
           </div>
 
 

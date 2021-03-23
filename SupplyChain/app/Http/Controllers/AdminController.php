@@ -99,6 +99,23 @@ class AdminController extends Controller
         
 
     }
+
+    public function add_sub_item(){
+        return view('add-subitem');
+        
+
+    }
+    public function add_stock(){
+        return view('add-stock');
+        
+
+    }
+
+    public function add_rate(){
+        return view('add-rate');
+        
+
+    }
     
 
 

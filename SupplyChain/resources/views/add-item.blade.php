@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="card-body">
-      <h4 class="card-title text-center" style="font-size:25px;">Add Dealer Information</h4>
+      <h4 class="card-title text-center" style="font-size:25px;">Add Item Information</h4>
       {{-- <p class="card-description"> Basic form elements </p> --}}
       <form class="forms-sample row">
 

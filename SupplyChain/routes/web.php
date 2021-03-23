@@ -27,6 +27,15 @@ Route::get('/add-dealer',AdminController::class .'@add_dealer');
 
 Route::get('/add-item',AdminController::class .'@add_item');
 
+Route::get('/add-subitem',AdminController::class .'@add_sub_item');
+
+Route::get('/add-stock',AdminController::class .'@add_stock');
+
+Route::get('/add-rate',AdminController::class .'@add_rate');
+
+
+
+
 
 
 
