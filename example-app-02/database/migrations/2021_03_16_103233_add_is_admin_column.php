@@ -14,7 +14,7 @@ class AddIsAdminColumn extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->bit('is_admin')->default(2)->unsigned();
+            $table->String('is_admin')->default('user');
         });
     }
 
