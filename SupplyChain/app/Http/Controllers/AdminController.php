@@ -13,7 +13,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        return "helo im admin page";
     }
 
     /**
@@ -81,4 +81,25 @@ class AdminController extends Controller
     {
         //
     }
+
+    public function dashboard(){
+        return view('dashboard');
+       
+
+    }
+
+    public function add_dealer(){
+        return view('add-dealer');
+        
+
+    }
+
+    public function add_item(){
+        return view('add-dealer');
+        
+
+    }
+    
+
+
 }
