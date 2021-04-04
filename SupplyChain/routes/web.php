@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,13 @@ Route::get('/add-stock',AdminController::class .'@add_stock');
 
 Route::get('/add-rate',AdminController::class .'@add_rate');
 
+Route::get('/insert', function(){
+
+
+    DB::insert('insert into users (name, email, password) values (?,?,?)', ['Saad','abc@gmail.com','12pass34']);
+
+
+});
 
 
 
