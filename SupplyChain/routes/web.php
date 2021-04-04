@@ -84,15 +84,28 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 
 // });
 
-Route::get('/findwhere',function(){
+// Route::get('/findwhere',function(){
 
 
-    $users=users::where('id',3)->orderBy('id','desc')->take(1)->get();
+//     $users=users::where('id',3)->orderBy('id','desc')->take(1)->get();
+
+//     return $users;
+
+
+// });
+
+
+Route::get('/findmore',function(){
+
+
+    // $users=users::findOrFail(1);
+
+    $users=users::where('id','<',5)->firstOrFail();
+
+
 
     return $users;
 
 
+
 });
-
-
-
