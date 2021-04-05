@@ -95,17 +95,70 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 // });
 
 
-Route::get('/findmore',function(){
+// Route::get('/findmore',function(){
 
 
-    // $users=users::findOrFail(1);
+//     // $users=users::findOrFail(1);
 
-    $users=users::where('id','<',5)->firstOrFail();
-
-
-
-    return $users;
+//     $users=users::where('id','<',5)->firstOrFail();
 
 
 
+//     return $users;
+
+
+
+// });
+
+
+// Route::get('/insert',function(){
+
+//     $users = new users; // Add new row
+
+//     $users->name="user02";
+//     $users->email="user03@gmail.com";
+//     $users->password="1234";
+
+//     $users->save();
+
+
+
+// });
+
+
+// Route::get('/update',function(){
+
+//     $users = users::findOrFail(3); // Update existing row
+
+//     //$users->name="user02";
+//     $users->email="user01@gmail.com";
+//     $users->password="1234";
+
+//     $users->save();
+
+
+
+// });
+
+
+// Route::get('/create',function(){  //// allow mass assignment using $fillable in model class before using this
+
+//     users::create(['name'=>'user05', 'email'=>'user05@gmail.com', 'password'=>'12\'34']);  ///// use \ to escape '
+
+
+    
+// });
+
+
+// Route::get('/update',function(){
+
+//     return users::where('name','user02')->where('id',4)->update(['password'=>'1234','email'=>'user02@gmail.com']);
+    
+// });
+
+
+Route::get('/del',function(){
+
+   
+    
 });

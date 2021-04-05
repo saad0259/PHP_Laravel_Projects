@@ -12,5 +12,10 @@ class users extends Model
     protected $table='users';
     // protected $primarykey='id';
 
+    protected $fillable=[   ///// Use this to allow mass assignment
+        'name',
+        'email',
+        'password'
+    ];
 
 }
