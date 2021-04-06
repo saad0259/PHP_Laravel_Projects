@@ -261,3 +261,4 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 // });
 
 
+Route::resource('/dealers',DealerController::class);
