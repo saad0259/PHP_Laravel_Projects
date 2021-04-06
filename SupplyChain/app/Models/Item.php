@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class users extends Model
+class Item extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
-    protected $table='users';
+    //protected $table='users';
     // protected $primarykey='id';
 
     protected $fillable=[   ///// Use this to allow mass assignment
@@ -22,5 +22,4 @@ class users extends Model
     ];
 
     protected $dates=['deleted_at'];
-
 }

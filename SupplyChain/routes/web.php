@@ -143,7 +143,7 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 
 // Route::get('/create',function(){  //// allow mass assignment using $fillable in model class before using this
 
-//     users::create(['name'=>'user05', 'email'=>'user05@gmail.com', 'password'=>'12\'34']);  ///// use \ to escape '
+//     users::create(['name'=>'user10', 'email'=>'user10@gmail.com', 'password'=>'12\'34']);  ///// use \ to escape '
 
 
     
@@ -157,8 +157,53 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 // });
 
 
-Route::get('/del',function(){
+// Route::get('/del',function(){
 
-   
+//     $user=users::find(3);
+//     $user->delete();
+
+//     users::destroy(4);      //delete a single row
+//     users::destroy([4,5]);  //delete multiple rows
     
-});
+// });
+
+
+// added a migration with (artisan make:migration add_delted_at_column_to_users_table --table=users) for soft delete operations
+
+
+// Route::get('/softdel',function(){
+
+//     users::find(9)->delete(); // if using soft_delete, data will not be deleted. Current timestamp will be added at 'deleted_at' and data won't be fetched using table::all();
+// });
+
+// Route::get('/readdelt',function(){
+
+//     //return users::withTrashed()->where('id',5)->get();  /////get trashed row with id=5
+
+//     return users::onlyTrashed()->get();   /////Get all trashed rows
+
+
+// });
+
+// Route::get('/restore',function(){
+
+
+
+//     return users::onlyTrashed()->restore();// restore all trashed records  
+
+
+// });
+
+// Route::get('/forcedelete',function(){
+
+//     // users::onlyTrashed()->forceDelete();
+//     // users::withTrashed()->where('id',10)->forceDelete();
+
+// });
+
+
+
+
+
+
+
