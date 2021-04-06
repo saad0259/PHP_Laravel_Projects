@@ -229,17 +229,35 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 
 //One to many relation
 
-Route::get('/subitems',function(){
+// Route::get('/subitems',function(){
 
-    $item=Item::find(1);
-    $data='';
-    foreach($item->subitems as $row){
+//     $item=Item::find(1);
+//     $data='';
+//     foreach($item->subitems as $row){
 
-        echo $row->name."<br>";
+//         echo $row->name."<br>";
         
-    }
-    //return $data;
+//     }
+//     //return $data;
 
     
 
-});
+// });
+
+
+// CRUD in one to many relation
+// Route::get('/insertsub',function(){
+
+//     $item=Item::findOrFail(2);
+//     $sub= new Subitem(['name'=>'Chonsa','grade'=>'1']);
+//     $item->subitems()->save($sub);
+
+// });
+
+// Route::get('/getsubs',function(){
+
+//     $item=Item::findOrFail(2);
+//      dd($item->subitems);
+// });
+
+
