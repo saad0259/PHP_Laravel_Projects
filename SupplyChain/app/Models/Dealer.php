@@ -12,13 +12,16 @@ class Dealer extends Model
     use HasFactory;
     use SoftDeletes;
 
-    //protected $table='users';
+    //protected $table='';
     // protected $primarykey='id';
 
     protected $fillable=[   ///// Use this to allow mass assignment
-        'name',
-        'email',
-        'password'
+        'Name',
+        'owner_name',
+        'CNIC',
+        'phone',
+        'longitude',
+        'latitude'
     ];
 
     protected $dates=['deleted_at'];

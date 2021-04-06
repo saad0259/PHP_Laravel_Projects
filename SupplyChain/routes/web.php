@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use DB;
 use  App\Models\users;
+use App\Models\Item;
+use App\Models\Subitem;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -204,6 +207,39 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 
 
 
+///////////////////////////////////Eloquent Relationships
+
+// One to one relation
+// Route::get('/subitem/{item}',function($item){
+
+//     return Item::find($item)->subitem->name; // One to one relation. go to functions subitem in model Item and fetch name property of the function output.
+
+
+// });
+
+
+//Inverse Realtion
+
+// Route::get('subitem/item/{subitem}',function($subitem){
+
+//     return Subitem::find($subitem)->Item->Name;// Gets item Name from items_table where the given subitem belongs to.
+// });
 
 
 
+//One to many relation
+
+Route::get('/subitems',function(){
+
+    $item=Item::find(1);
+    $data='';
+    foreach($item->subitems as $row){
+
+        echo $row->name."<br>";
+        
+    }
+    //return $data;
+
+    
+
+});

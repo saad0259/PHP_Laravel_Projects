@@ -12,14 +12,28 @@ class Subitem extends Model
     use HasFactory;
     use SoftDeletes;
 
-    //protected $table='users';
+    //protected $table='';
     // protected $primarykey='id';
 
     protected $fillable=[   ///// Use this to allow mass assignment
         'name',
-        'email',
-        'password'
+        'grade',
+        'item_id'
     ];
 
     protected $dates=['deleted_at'];
+
+    public function item(){
+
+        // inverse relation. function is getting item where subitem belongs.
+        return $this->belongsTo('App\Models\Item'); //
+        
+    }
+
+
+
+
+
+
+
 }
