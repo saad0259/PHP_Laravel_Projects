@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\CreateUserRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class UserController extends Controller
 {
@@ -13,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return "hello";
+        $users=User::get(); 
+
+        return view('user.index',compact('users'));
     }
 
     /**
@@ -23,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -34,7 +39,37 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $input=$request->all();
+        if($file= $request->file('image'))
+        {
+            $directory='assets/uploads/images/';
+
+            $name=Carbon::now()->timestamp; // getting current timestamp to create a unique image name
+            $ext = $file->guessExtension(); // get extension of the image
+            $name=$name.'.'.$ext;   // merging name and extension
+
+            $file->move($directory,$name); // Moving file to given directory
+
+            $input['image']=$name;
+
+        }
+        User::create($input);
+
+
+
+        // echo $file->getClientOriginalName();
+        // echo "<br>";
+        // echo $file->getSize();
+
+        // User::create($request->all());
+        return redirect('/user');
+    }
+
+    public function saveFile(CreateUserRequest $request) {
+        $md5Name = md5_file($request->file('image')->getRealPath());
+        $guessExtension = $request->file('image')->guessExtension();
+        $file = $request->file('image')->storeAs('image', $md5Name.'.'.$guessExtension  ,'assets/uploads/images/');
     }
 
     /**
@@ -45,7 +80,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user=User::findOrFail($id);
+        return view('user.show',compact('user'));
     }
 
     /**
@@ -56,7 +92,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user=User::findOrFail($id);
+        
+        return view('user.edit',compact('user'));
     }
 
     /**
@@ -66,9 +104,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateUserRequest $request, $id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        $dealer->update($request->all());
+        return view('dealer.show',compact('dealer'));
     }
 
     /**

@@ -94,7 +94,7 @@
 
         {!! Form::close() !!}
 
-      </form>
+      
         {!! Form::open(['method'=>'DELETE', 'action'=>['DealerController@destroy',$dealer->id] ]) !!}
 
 

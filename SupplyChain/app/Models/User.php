@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Model
 {
+
+    public $directory='/assets/uploads/images/';
     use HasFactory;
     use SoftDeletes;
 
@@ -19,7 +21,7 @@ class User extends Model
         'username',
         'password',
         'image',
-        'is_admin',
+        
     ];
 
     protected $dates=['deleted_at'];
@@ -30,13 +32,19 @@ class User extends Model
         return ucwords($val);
 
     }
+
+    public function getImageAttribute($val){
+
+        $full_path=$this->directory.$val;
+        return $full_path;
+
+    }
     
     public function setNameAttribute($val){
 
         $this->attributes['name']=ucwords($val);
     
     }
-
 
     public static function scopeLatestCreated($query){
 
