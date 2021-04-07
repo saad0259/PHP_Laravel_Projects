@@ -18,7 +18,7 @@
         <div class="form-group col-md-6">
 
           {!! Form::label('name','Facility Name') !!}
-          {!! Form::text('name', null,['class'=>'form-control', 'placeholder' => 'e.g. Welcome Fruit Shop', 'required' => 'required'] ) !!}
+          {!! Form::text('name', null,['class'=>'form-control', 'placeholder' => 'e.g. Welcome Fruit Shop'] ) !!}
 
           {{-- <label for="name">Facility Name</label>
           <input type="text" class="form-control" required id="name" name="name" placeholder="e.g. Welcome Fruit Shop">
@@ -30,8 +30,8 @@
         <div class="form-group col-md-6">
 
 
-          {!! Form::label('owner','Owner Name') !!}
-          {!! Form::text('owner', null,['class'=>'form-control', 'placeholder' => 'Owner Name', 'required' => 'required'] ) !!}
+            {!! Form::label('owner','Owner Name') !!}
+            {!! Form::text('owner', null,['class'=>'form-control', 'placeholder' => 'Owner Name'] ) !!}
 
 
             {{-- <label for="owner">Owner Name</label>
@@ -47,7 +47,7 @@
 
 
           {!! Form::label('cnic','CNIC') !!}
-          {!! Form::text('cnic', null,['class'=>'form-control', 'placeholder' => 'CNIC e.g. 3660123456791', 'required' => 'required'] ) !!}
+          {!! Form::text('cnic', null,['class'=>'form-control', 'placeholder' => 'CNIC e.g. 3660123456791'] ) !!}
 
 
 
@@ -61,7 +61,7 @@
 
           
           {!! Form::label('phone','Phone') !!}
-          {!! Form::text('phone', null,['class'=>'form-control', 'placeholder' => 'Phone e.g. 03012345678', 'required' => 'required'] ) !!}
+          {!! Form::text('phone', null,['class'=>'form-control', 'placeholder' => 'Phone e.g. 03012345678'] ) !!}
 
 
 
@@ -75,7 +75,7 @@
           <div class="form-group col-md-6">
 
             {!! Form::label('address','Address') !!}
-            {!! Form::text('address', null,['class'=>'form-control', 'placeholder' => 'Address', 'required' => 'required'] ) !!}
+            {!! Form::text('address', null,['class'=>'form-control', 'placeholder' => 'Address'] ) !!}
   
 
 
@@ -103,7 +103,7 @@
         <div class="form-group col-md-6">
 
             {!! Form::label('longitude','Longitude') !!}
-            {!! Form::text('longitude', null,['class'=>'form-control', 'placeholder' => 'longitude', 'required' => 'required'] ) !!}
+            {!! Form::text('longitude', null,['class'=>'form-control', 'placeholder' => 'longitude'] ) !!}
   
 
 
@@ -116,7 +116,7 @@
 
         <div class="form-group col-md-6">
           {!! Form::label('latitude','Latitude') !!}
-          {!! Form::text('latitude', null,['class'=>'form-control', 'placeholder' => 'Latitude', 'required' => 'required'] ) !!}
+          {!! Form::text('latitude', null,['class'=>'form-control', 'placeholder' => 'Latitude'] ) !!}
 
 
 
@@ -145,6 +145,26 @@
    
     </div>
   </div>
+
+    @if (count($errors)>0)
+
+    <div class="alert alert-danger">
+
+      <ul>
+      @foreach ($errors->all() as $error)
+      
+      
+      <li>
+        {{$error}}
+      </li>
+
+
+
+      @endforeach
+      </ul>
+    </div>
+      
+    @endif
 
 
 

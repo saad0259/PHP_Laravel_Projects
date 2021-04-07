@@ -219,9 +219,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/dealer/create">Add New</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dealer/edit">Edit</a>
-                  </li>
+                  
                 </ul>
               </div>
             </li>

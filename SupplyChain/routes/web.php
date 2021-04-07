@@ -23,20 +23,36 @@ use App\Models\Subitem;
 // });
 //Route::resource('admin',AdminController::class);
 
-Route::get('/',AdminController::class .'@dashboard');
-Route::get('/dashboard',AdminController::class .'@dashboard');
+Route::get('/','DealerController@index'); //Route::get('/','AdminController@dashboard');
 
 
 
-Route::get('/add-dealer',AdminController::class .'@add_dealer');
+Route::get('/dashboard','AdminController@dashboard');
 
-Route::get('/add-item',AdminController::class .'@add_item');
 
-Route::get('/add-subitem',AdminController::class .'@add_sub_item');
 
-Route::get('/add-stock',AdminController::class .'@add_stock');
+Route::group(['middleware'=>'web'],function(){
 
-Route::get('/add-rate',AdminController::class .'@add_rate');
+    Route::resource('/dealer','DealerController');
+
+
+});
+
+
+
+
+
+
+
+// Route::get('/add-dealer','AdminController@add_dealer');
+
+// Route::get('/add-item','AdminController@add_item');
+
+// Route::get('/add-subitem','AdminController@add_sub_item');
+
+// Route::get('/add-stock','AdminController@add_stock');
+
+// Route::get('/add-rate','AdminController@add_rate');
 
 // Route::get('/insert', function(){
 
@@ -261,4 +277,3 @@ Route::get('/add-rate',AdminController::class .'@add_rate');
 // });
 
 
-Route::resource('/dealer','DealerController');

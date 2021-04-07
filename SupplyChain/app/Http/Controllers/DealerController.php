@@ -37,7 +37,23 @@ class DealerController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request->all();
+        
+
+        $this->validate($request,[
+
+            'name'=>'required|max:75',
+            'owner'=>'required|max:50',
+            'cnic'=>'required|max:13|min:13',
+            'phone'=>'required|max:11|min:11',
+            'address'=>'required|max:100',
+            'longitude'=>'required',
+            'latitude'=>'required'
+
+
+
+        ]);
+
+
         Dealer::create($request->all());
         return redirect('/dealer');
 

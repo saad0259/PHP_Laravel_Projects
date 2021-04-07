@@ -17,7 +17,6 @@ class Dealer extends Model
 
     protected $fillable=[   ///// Use this to allow mass assignment
         'name',
-        'owner_name',
         'owner',
         'cnic',
         'phone',
