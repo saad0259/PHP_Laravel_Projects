@@ -1,8 +1,8 @@
 :root {
-  --sidebar_main: #3cab0a; /*1c45ef*/
-  --sidebar_grad: #6ccb2f;
-  --sidebar_btn_hover:#1c9a05;/*#0f25d5*/
-  --sidebar_subbtn_line:#f00;
+  --sidebar_main: #2c9b05; /*1c45ef*/
+  --sidebar_grad: #4cab1f;
+  --sidebar_btn_hover:#006600;/*#0f25d5*/
+  --sidebar_subbtn_line:#006600;
 }
 
 
