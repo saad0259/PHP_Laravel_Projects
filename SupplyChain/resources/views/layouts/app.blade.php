@@ -208,19 +208,19 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Basic Elements</span>
+                <span class="menu-title">Dealer Info</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                    <a class="nav-link" href="/dealer">View All</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                    <a class="nav-link" href="/dealer/create">Add New</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                    <a class="nav-link" href="/dealer/edit">Edit</a>
                   </li>
                 </ul>
               </div>

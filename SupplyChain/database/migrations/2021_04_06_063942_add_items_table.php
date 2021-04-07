@@ -15,7 +15,7 @@ class AddItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('name');
             $table->string('type');
             
 

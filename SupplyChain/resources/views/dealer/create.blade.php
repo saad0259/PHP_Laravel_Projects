@@ -14,7 +14,7 @@
         {{ csrf_field() }}
         <div class="form-group col-md-6">
           <label for="exampleInputName1">Facility Name</label>
-          <input type="text" class="form-control" required id="Name" name="Name" placeholder="e.g. Welcome Fruit Shop">
+          <input type="text" class="form-control" required id="name" name="name" placeholder="e.g. Welcome Fruit Shop">
         </div>
 
         <div class="form-group col-md-6">
@@ -31,6 +31,12 @@
         <div class="form-group col-md-6">
             <label for="exampleInputEmail3">Phone</label>
             <input type="text" class="form-control" required id="phone" name="phone" placeholder="Phone">
+          </div>
+
+
+          <div class="form-group col-md-6">
+            <label for="exampleInputEmail3">Address</label>
+            <input type="text" class="form-control" required id="address" name="address" placeholder="Address">
           </div>
 
 

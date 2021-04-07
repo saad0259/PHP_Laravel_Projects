@@ -16,11 +16,12 @@ class Dealer extends Model
     // protected $primarykey='id';
 
     protected $fillable=[   ///// Use this to allow mass assignment
-        'Name',
+        'name',
         'owner_name',
         'owner',
         'CNIC',
         'phone',
+        'address',
         'longitude',
         'latitude'
     ];

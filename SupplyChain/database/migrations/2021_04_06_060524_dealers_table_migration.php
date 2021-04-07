@@ -15,10 +15,11 @@ class DealersTableMigration extends Migration
     {
         Schema::create('dealers', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('name');
             $table->string('owner');
-            $table->string('CNIC');
+            $table->string('cnic');
             $table->string('phone');
+            $table->string('address');
             $table->string('longitude');
             $table->string('latitude');
 

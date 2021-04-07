@@ -14,7 +14,9 @@ class DealerController extends Controller
      */
     public function index()
     {
-        //
+        $dealers=Dealer::all();
+
+        return view('dealer.index',compact('dealers'));
     }
 
     /**
@@ -37,7 +39,7 @@ class DealerController extends Controller
     {
         //return $request->all();
         Dealer::create($request->all());
-        return view('dealer.create');
+        return redirect('/dealer');
 
     }
 
