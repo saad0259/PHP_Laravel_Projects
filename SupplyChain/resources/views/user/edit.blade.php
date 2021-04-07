@@ -9,7 +9,7 @@
     <div class="card-body">
       <h4 class="card-title text-center" style="font-size:25px;">Edit Admin Info</h4>
 
-        {!! Form::model($user,['method'=>'Patch', 'action'=>['UserController@store',$user->id] ,'class'=>'forms-sample row','files'=>true ]) !!}
+        {!! Form::model($user,['method'=>'Patch', 'action'=>['UserController@update',$user->id] ,'class'=>'forms-sample row','files'=>true ]) !!}
 
 
         <div class="form-group col-md-12">
@@ -46,14 +46,14 @@
 
         <div class="form-group col-md-12">
 
-          {!! Form::submit('Add', ['class'=>'btn btn-success mr-2']) !!}
+          {!! Form::submit('Change', ['class'=>'btn btn-success mr-2']) !!}
           
         </div>
+        {!! Form::close() !!}
 
-      {!! Form::close() !!}
-
-      {!! Form::open(['method'=>'DELETE', 'action'=>['UserController@destroy',$user->id] ]) !!}
-      {!! Form::close() !!}
+        {!! Form::open(['method'=>'DELETE', 'action'=>['UserController@destroy',$user->id] ]) !!}
+        {!! Form::submit('Delete', ['class'=>'btn btn-danger mr-2']) !!}
+        {!! Form::close() !!}
       
    
     </div>

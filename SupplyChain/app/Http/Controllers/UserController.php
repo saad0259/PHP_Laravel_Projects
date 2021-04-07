@@ -106,9 +106,9 @@ class UserController extends Controller
      */
     public function update(CreateUserRequest $request, $id)
     {
-        $dealer=Dealer::findOrFail($id);
-        $dealer->update($request->all());
-        return view('dealer.show',compact('dealer'));
+        $user=User::findOrFail($id);
+        $user->update($request->all());
+        return view('user.show',compact('user'));
     }
 
     /**
@@ -119,6 +119,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user=User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect('/user');
     }
 }

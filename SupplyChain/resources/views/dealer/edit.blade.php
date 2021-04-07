@@ -94,9 +94,10 @@
 
         {!! Form::close() !!}
 
-      
+      </form>
         {!! Form::open(['method'=>'DELETE', 'action'=>['DealerController@destroy',$dealer->id] ]) !!}
 
+        
 
         {!! Form::submit('Delete', ['class'=>'btn btn-danger mr-2']) !!}
 
@@ -106,20 +107,6 @@
   </div>
 
 
-
-  @if (count($errors)>0)
-  <div class='alert alert-danger'>
-  <ul>
-  @foreach ($errors->all() as $error)
-  <li>
-  {{$error}}
-  </li>
-  @endforeach
-  </ul>
-  </div>
-  @endif
-  
-  
 
 
 @endsection
