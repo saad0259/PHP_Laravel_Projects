@@ -48,6 +48,17 @@ class Dealer extends Model
         $this->attributes['name']=ucwords($val);
     
     }
+
+
+    public static function scopeLatestCreated($query){
+
+        return $query->orderBy('created_at','desc')->get();
+    }
+
+    public static function scopeLatestUpdated($query){
+
+        return $query->orderBy('updated_at','desc')->get();
+    }
     
     
 

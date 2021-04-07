@@ -41,6 +41,17 @@ Route::group(['middleware'=>'web'],function(){
 });
 
 
+Route::group(['middleware'=>'web'],function(){
+
+    Route::resource('/user','UserController');
+
+
+});
+
+
+
+
+
 
 
 
@@ -280,7 +291,15 @@ Route::group(['middleware'=>'web'],function(){
 
 // Route::get('/date',function(){ //Use Cabon\Carbon at the top first.
 
-//     echo Carbon::now()->addDays(10)->diffForHumans();
+//     // $userTimezone = 'Asia/Karachi';
+//     // //echo Carbon::now()->addDays(10)->diffForHumans();
+//     // echo Carbon::parse(Carbon::now());
+
+//     // //$date = Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'Europe/Stockholm');
+
+
+//     // echo "<br>";
+//     // echo Carbon::now()->setTimezone($userTimezone);
 
 // });
 

@@ -2,42 +2,50 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+
+class User extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
+
+
+    protected $fillable=[   ///// Use this to allow mass assignment
         'name',
-        'email',
+        'username',
         'password',
+        'image',
+        'is_admin',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $dates=['deleted_at'];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
+    public function getNameAttribute($val){
+
+        return ucwords($val);
+
+    }
+    
+    public function setNameAttribute($val){
+
+        $this->attributes['name']=ucwords($val);
+    
+    }
+
+
+    public static function scopeLatestCreated($query){
+
+        return $query->orderBy('created_at','desc')->get();
+    }
+
+    public static function scopeLatestUpdated($query){
+
+        return $query->orderBy('updated_at','desc')->get();
+    }
+    
 }

@@ -15,7 +15,7 @@ class DealerController extends Controller
      */
     public function index()
     {
-        $dealers=Dealer::all();
+        $dealers=Dealer::latestcreated(); // latestcreated() is a custom queryScope
 
         return view('dealer.index',compact('dealers'));
     }
