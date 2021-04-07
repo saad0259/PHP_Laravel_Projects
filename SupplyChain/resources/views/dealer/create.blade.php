@@ -7,35 +7,35 @@
 
 <div class="card">
     <div class="card-body">
-      <h4 class="card-title text-center" style="font-size:25px;">Add Dealer Information</h4>
+      <h4 class="card-title text-center" style="font-size:25px;">Add New Dealer</h4>
       {{-- <p class="card-description"> Basic form elements </p> --}}
       <form class="forms-sample row" enctype="multipart/form-data" method="POST"  action="/dealer"  >
 
         {{ csrf_field() }}
         <div class="form-group col-md-6">
-          <label for="exampleInputName1">Facility Name</label>
+          <label for="name">Facility Name</label>
           <input type="text" class="form-control" required id="name" name="name" placeholder="e.g. Welcome Fruit Shop">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="exampleInputName1">Owner Name</label>
+            <label for="owner">Owner Name</label>
             <input type="text" class="form-control" required id="owner" name="owner" placeholder="Owner Name">
           </div>
 
 
         <div class="form-group col-md-6">
-          <label for="exampleInputEmail3">CNIC</label>
-          <input type="text" class="form-control" required id="CNIC" name="CNIC" placeholder="CNIC">
+          <label for="cnic">CNIC</label>
+          <input type="text" class="form-control" required id="cnic" name="cnic" placeholder="CNIC">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="exampleInputEmail3">Phone</label>
+            <label for="phone">Phone</label>
             <input type="text" class="form-control" required id="phone" name="phone" placeholder="Phone">
           </div>
 
 
           <div class="form-group col-md-6">
-            <label for="exampleInputEmail3">Address</label>
+            <label for="address">Address</label>
             <input type="text" class="form-control" required id="address" name="address" placeholder="Address">
           </div>
 
@@ -55,12 +55,12 @@
         </div> --}}
 
         <div class="form-group col-md-6">
-          <label for="exampleInputCity1">Longitude</label>
+          <label for="longitude">Longitude</label>
           <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude">
         </div>
 
         <div class="form-group col-md-6">
-            <label for="exampleInputCity1">Latitude</label>
+            <label for="latitude">Latitude</label>
             <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude">
           </div>
   

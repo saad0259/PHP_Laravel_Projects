@@ -51,7 +51,8 @@ class DealerController extends Controller
      */
     public function show($id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        return view('dealer.show',compact('dealer'));
     }
 
     /**
@@ -62,7 +63,9 @@ class DealerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        
+        return view('dealer.edit',compact('dealer'));
     }
 
     /**
@@ -74,7 +77,9 @@ class DealerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        $dealer->update($request->all());
+        return view('dealer.show',compact('dealer'));
     }
 
     /**
@@ -85,6 +90,10 @@ class DealerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+
+        $dealer->delete();
+
+        return redirect('/dealer');
     }
 }

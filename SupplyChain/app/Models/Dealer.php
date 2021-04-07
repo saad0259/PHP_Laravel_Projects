@@ -19,7 +19,7 @@ class Dealer extends Model
         'name',
         'owner_name',
         'owner',
-        'CNIC',
+        'cnic',
         'phone',
         'address',
         'longitude',

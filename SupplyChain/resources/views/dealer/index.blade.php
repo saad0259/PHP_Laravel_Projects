@@ -23,19 +23,22 @@
           <tbody>
 
             @foreach ($dealers as $dealer)
-
+            
             <tr>
-                <td>{{$dealer->name}}</td>
+              
+
+              
+                <td>  <a href="{{route('dealer.show', $dealer->id)}}">  {{$dealer->name}} <a> </td>
                 <td>{{$dealer->owner}}</td>
                 <td>{{$dealer->cnic}}</td>
                 <td>{{$dealer->phone}}</td>
                 <td>{{$dealer->address}}</td>
-                <td><button class="btn btn-success mr-2">{{$dealer->longitude}}, {{$dealer->latitude}}</button>
-                </td>
+                <td>{{$dealer->longitude}}, {{$dealer->latitude}}</td>
+                
                 
                 
               </tr>
-              
+           
 
                 
             @endforeach
