@@ -1,3 +1,13 @@
+:root {
+  --sidebar_main: #3cab0a; /*1c45ef*/
+  --sidebar_grad: #6ccb2f;
+  --sidebar_btn_hover:#1c9a05;/*#0f25d5*/
+  --sidebar_subbtn_line:#f00;
+}
+
+
+
+
 /* Layouts */
 /* Animation Mixins */
 @-webkit-keyframes dropdownAnimation {
@@ -258,7 +268,7 @@
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    background: #1c45ef;
+    background: var(--sidebar_main);
     width: 270px;
     height: 63px; }
     .navbar.default-layout .navbar-brand-wrapper .navbar-brand {
@@ -379,7 +389,7 @@
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 63px);
-  background: linear-gradient(to top, #5768f3, #1c45ef);
+  background: linear-gradient(to top, var(--sidebar_grad), var(--sidebar_main));
   font-family: "roboto", sans-serif;
   padding: 0;
   width: 270px;
@@ -416,7 +426,7 @@
           display: block;
           height: 100%;
           width: 2px;
-          background: #1026de; }
+          background: var(--sidebar_subbtn_line); }
         .sidebar > .nav .nav-item:not(.hover-open) .collapse .sub-menu .nav-item .nav-link:hover,
         .sidebar > .nav .nav-item:not(.hover-open) .collapsing .sub-menu .nav-item .nav-link:hover {
           color: #fff; }
@@ -533,7 +543,7 @@
       transition-timing-function: "ease-in-out";
       transition-property: "background", "color", "box-shadow", "padding"; }
     .sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]) {
-      background: #0f25d5;
+      background: var(--sidebar_btn_hover);
       padding-left: 65px; }
       .sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]):before {
         border-color: #fff; }

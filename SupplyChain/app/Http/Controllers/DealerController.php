@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Dealer;
 
 class DealerController extends Controller
 {
@@ -23,7 +24,7 @@ class DealerController extends Controller
      */
     public function create()
     {
-        //
+        return view('dealer.create');
     }
 
     /**
@@ -34,7 +35,10 @@ class DealerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //return $request->all();
+        Dealer::create($request->all());
+        return view('dealer.create');
+
     }
 
     /**
