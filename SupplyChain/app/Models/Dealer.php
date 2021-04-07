@@ -26,4 +26,33 @@ class Dealer extends Model
     ];
 
     protected $dates=['deleted_at'];
+
+
+    public function getNameAttribute($val){
+
+        return ucwords($val);
+
+    }
+    public function getOwnerAttribute($val){
+
+        return ucwords($val);
+
+    }
+
+    public function getAddressAttribute($val){
+    return ucwords($val);
+    }
+
+    public function setNameAttribute($val){
+
+        $this->attributes['name']=ucwords($val);
+    
+    }
+    
+    
+
+
+
+
+
 }

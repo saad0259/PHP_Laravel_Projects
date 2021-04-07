@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateDealerRequest;
 use Illuminate\Http\Request;
 use App\Models\Dealer;
 
@@ -35,23 +36,23 @@ class DealerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateDealerRequest $request)
     {
         
 
-        $this->validate($request,[
+        // $this->validate($request,[
 
-            'name'=>'required|max:75',
-            'owner'=>'required|max:50',
-            'cnic'=>'required|max:13|min:13',
-            'phone'=>'required|max:11|min:11',
-            'address'=>'required|max:100',
-            'longitude'=>'required',
-            'latitude'=>'required'
+        //     'name'=>'required|max:75',
+        //     'owner'=>'required|max:50',
+        //     'cnic'=>'required|max:13|min:13',
+        //     'phone'=>'required|max:11|min:11',
+        //     'address'=>'required|max:100',
+        //     'longitude'=>'required',
+        //     'latitude'=>'required'
 
 
 
-        ]);
+        // ]);
 
 
         Dealer::create($request->all());
@@ -91,7 +92,7 @@ class DealerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateDealerRequest $request, $id)
     {
         $dealer=Dealer::findOrFail($id);
         $dealer->update($request->all());

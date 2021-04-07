@@ -3,8 +3,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use DB;
 use  App\Models\users;
+use App\Models\Dealer;
 use App\Models\Item;
 use App\Models\Subitem;
+use Carbon\Carbon;
 
 
 /*
@@ -275,5 +277,49 @@ Route::group(['middleware'=>'web'],function(){
 //     $item=Item::findOrFail(2);
 //      dd($item->subitems);
 // });
+
+// Route::get('/date',function(){ //Use Cabon\Carbon at the top first.
+
+//     echo Carbon::now()->addDays(10)->diffForHumans();
+
+// });
+
+////////////Accessors/getters
+
+// Route::get('/getname',function(){
+
+
+//     $dealer=Dealer::findOrFail(1);
+
+//     echo $dealer;
+
+
+// });
+
+
+
+// ////////////Mutators/setters
+
+// Route::get('/setname',function(){
+
+
+//     $dealer=Dealer::findOrFail(1);
+
+//     $dealer->name="abc shop";
+
+//     $dealer->save();
+
+
+// });
+
+
+
+
+
+
+
+
+
+
 
 

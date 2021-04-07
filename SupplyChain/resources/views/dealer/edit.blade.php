@@ -9,12 +9,11 @@
     <div class="card-body">
       <h4 class="card-title text-center" style="font-size:25px;">Edit Dealer Information</h4>
 
-      {{-- <form class="forms-sample row" enctype="multipart/form-data" method="POST"  action="/dealer/{{$dealer->id}}"> --}}
 
         {!! Form::model($dealer,['method'=>'Patch', 'action'=>['DealerController@update',$dealer->id] ,'class'=>'forms-sample row', ]) !!}
 
 
-        {{-- {{ csrf_field() }} --}}
+       
 
         <input type="hidden" name="_method" value="PUT">
 
@@ -96,15 +95,9 @@
         {!! Form::close() !!}
 
       </form>
-      {{-- <form method="POST" action="/dealer/{{$dealer->id}}"> --}}
         {!! Form::open(['method'=>'DELETE', 'action'=>['DealerController@destroy',$dealer->id] ]) !!}
 
-        
 
-        {{-- {{ csrf_field() }} --}}
-
-        {{-- <input type="hidden" name="_method" value="DELETE">
-         --}}
         {!! Form::submit('Delete', ['class'=>'btn btn-danger mr-2']) !!}
 
         {!! Form::close() !!}
@@ -113,6 +106,20 @@
   </div>
 
 
+
+  @if (count($errors)>0)
+  <div class='alert alert-danger'>
+  <ul>
+  @foreach ($errors->all() as $error)
+  <li>
+  {{$error}}
+  </li>
+  @endforeach
+  </ul>
+  </div>
+  @endif
+  
+  
 
 
 @endsection

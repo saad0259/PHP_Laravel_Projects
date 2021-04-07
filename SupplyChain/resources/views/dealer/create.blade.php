@@ -133,7 +133,8 @@
         <div class="form-group col-md-12">
 
           {!! Form::submit('Add', ['class'=>'btn btn-success mr-2']) !!}
-
+          
+          
 
           {{-- <button type="submit" class="btn btn-success mr-2">Submit</button> --}}
           
@@ -170,3 +171,4 @@
 
 
 @endsection
+

@@ -13,7 +13,7 @@ class CreateDealerRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class CreateDealerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required|max:75',
+            'owner'=>'required|max:50',
+            'cnic'=>'required|max:13|min:13',
+            'phone'=>'required|max:11|min:11',
+            'address'=>'required|max:100',
+            'longitude'=>'required',
+            'latitude'=>'required'
         ];
     }
 }
