@@ -23,7 +23,7 @@
 
         <div class="form-group col-md-6">
 
-            {!! Form::label('item_id','Subitem Name') !!}
+            {!! Form::label('item_id','Item Name') !!}
             {{ Form::select('item_id', $items, null, ['class'=>'form-control', 'placeholder' => 'Please Select Item ...','required' => 'required']) }}
   
           

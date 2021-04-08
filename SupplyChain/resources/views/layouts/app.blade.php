@@ -265,6 +265,26 @@
 
 
             <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#unit-info" aria-expanded="false" aria-controls="unit-info">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Unit Info</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="unit-info">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit">View All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit/create">Add New</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#admin-info" aria-expanded="false" aria-controls="admin-info">
                 <i class="menu-icon typcn typcn-coffee"></i>
                 <span class="menu-title">Admin Info</span>

@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\CreateItemRequest;
+
 use Illuminate\Http\Request;
-use App\Models\Item;
 
-
-class ItemController extends Controller
+class StockController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items=Item::get();
-
-        return view('item.index',compact('items'));
+        //
     }
 
     /**
@@ -27,8 +23,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('item.create');
-
+        //
     }
 
     /**
@@ -37,10 +32,9 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateItemRequest $request)
+    public function store(Request $request)
     {
-        Item::create($request->all());
-        return redirect('/item');
+        //
     }
 
     /**
@@ -51,8 +45,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $item=Item::findOrFail($id);
-        return view('item.show',compact('item'));
+        //
     }
 
     /**
@@ -63,9 +56,7 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        $item=Item::findOrFail($id);
-        
-        return view('item.edit',compact('item'));
+        //
     }
 
     /**
@@ -75,11 +66,9 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateItemRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $item=Item::findOrFail($id);
-        $item->update($request->all());
-        return view('item.show',compact('item'));
+        //
     }
 
     /**
@@ -90,12 +79,6 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        $item=Item::findOrFail($id);
-
-        $item->subitems()->delete();
-
-        $item->delete();
-
-        return redirect('/item');
+        //
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateSubitemRequest;
 use App\Models\Item;
 use App\Models\Subitem;
 
@@ -37,7 +38,7 @@ class SubitemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSubitemRequest $request)
     {
         Subitem::create($request->all());
         return redirect('/subitem');
@@ -51,7 +52,9 @@ class SubitemController extends Controller
      */
     public function show($id)
     {
-        //
+        $subitem=Subitem::findOrFail($id);
+        $items=Item::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        return view('subitem.show',compact('subitem'));
     }
 
     /**
@@ -62,7 +65,13 @@ class SubitemController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subitem=Subitem::findOrFail($id);
+        $items=Item::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+
+        $data['items']=$items;
+        $data['subitem']=$subitem;
+
+        return view('subitem.edit',compact('data'));
     }
 
     /**
@@ -72,9 +81,13 @@ class SubitemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateSubitemRequest $request, $id)
     {
-        //
+        $subitem=Subitem::findOrFail($id);
+        $subitem->update($request->all());
+
+
+        return view('subitem.show',compact('subitem'));
     }
 
     /**
@@ -85,6 +98,10 @@ class SubitemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $subitem=Subitem::findOrFail($id);
+
+        $subitem->delete();
+
+        return redirect('/subitem');
     }
 }

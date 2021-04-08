@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\CreateItemRequest;
+
 use Illuminate\Http\Request;
-use App\Models\Item;
+use App\Models\Unit;
+use App\Http\Requests\CreateUnitRequest;
 
 
-class ItemController extends Controller
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items=Item::get();
+        $units=Unit::get(); // latestcreated() is a custom queryScope
 
-        return view('item.index',compact('items'));
+        return view('unit.index',compact('units'));
     }
 
     /**
@@ -27,8 +28,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('item.create');
-
+        return view('unit.create');
     }
 
     /**
@@ -37,10 +37,10 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateItemRequest $request)
+    public function store(CreateUnitRequest $request)
     {
-        Item::create($request->all());
-        return redirect('/item');
+        Unit::create($request->all());
+        return redirect('/unit');
     }
 
     /**
@@ -51,8 +51,8 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $item=Item::findOrFail($id);
-        return view('item.show',compact('item'));
+        $unit=Unit::findOrFail($id);
+        return view('unit.show',compact('unit'));
     }
 
     /**
@@ -63,9 +63,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        $item=Item::findOrFail($id);
+        $unit=Unit::findOrFail($id);
         
-        return view('item.edit',compact('item'));
+        return view('unit.edit',compact('unit'));
     }
 
     /**
@@ -75,11 +75,11 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateItemRequest $request, $id)
+    public function update(CreateUnitRequest $request, $id)
     {
-        $item=Item::findOrFail($id);
-        $item->update($request->all());
-        return view('item.show',compact('item'));
+        $unit=Unit::findOrFail($id);
+        $unit->update($request->all());
+        return view('unit.show',compact('unit'));
     }
 
     /**
@@ -90,12 +90,8 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        $item=Item::findOrFail($id);
-
-        $item->subitems()->delete();
-
-        $item->delete();
-
-        return redirect('/item');
+        $unit=Unit::findOrFail($id);
+        $unit->delete();
+        return redirect('/unit');
     }
 }
