@@ -17,10 +17,12 @@ class AddStockTable extends Migration
             $table->id();
             $table->integer('subitem_id')->unsigned();
             $table->integer('dealer_id')->unsigned();
-            $table->decimal('receive_quantity', 8, 2)->nullable();
-            $table->decimal('receive_at', 8, 2)->nullable();
-            $table->decimal('sold_quantity', 8, 2)->nullable();
-            $table->decimal('sold_at', 8, 2)->nullable();
+            $table->decimal('available_stock', 10)->nullable();
+            $table->decimal('receive_quantity', 10)->nullable();
+            $table->decimal('receive_at', 10)->nullable();
+            $table->decimal('sold_quantity', 10)->nullable();
+            $table->decimal('sold_at', 10)->nullable();
+            $table->decimal('gov_price', 10)->nullable();
             $table->integer('unit_id')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();

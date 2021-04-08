@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subitem;
+use App\Models\Unit;
+use App\Models\Dealer;
+use App\Models\Stock;
 
 class StockController extends Controller
 {
@@ -23,7 +27,10 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        $subitems=Subitem::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        $dealers=Dealer::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        $units=Unit::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        return view('stock.create',compact('subitems','dealers','units'));
     }
 
     /**

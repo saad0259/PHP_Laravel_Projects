@@ -17,10 +17,12 @@ class Stock extends Model
     protected $fillable=[   ///// Use this to allow mass assignment
         'subitem_id',
         'dealer_id',
+        'available_stock',
         'receive_quantity',
         'receive_at',
         'sold_quantity',
         'sold_at',
+        'gov_price',
         'unit_id'
     ];
 

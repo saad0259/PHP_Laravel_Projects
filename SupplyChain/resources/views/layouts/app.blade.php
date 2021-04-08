@@ -265,6 +265,26 @@
 
 
             <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#stock-info" aria-expanded="false" aria-controls="stock-info">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Stock Info</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="stock-info">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/stock">View All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/stock/create">Add New</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#unit-info" aria-expanded="false" aria-controls="unit-info">
                 <i class="menu-icon typcn typcn-coffee"></i>
                 <span class="menu-title">Unit Info</span>
