@@ -23,6 +23,31 @@ class Subitem extends Model
 
     protected $dates=['deleted_at'];
 
+
+    public function getNameAttribute($val){
+
+        return ucwords($val);
+
+    }
+
+    public function setNameAttribute($val){
+
+        $this->attributes['name']=ucwords($val);
+    
+    }
+
+    public function getGradeAttribute($val){
+
+        return ucwords($val);
+
+    }
+
+    public function setGradeAttribute($val){
+
+        $this->attributes['grade']=ucwords($val);
+    
+    }
+
     public function item(){
 
         // inverse relation. function is getting item where subitem belongs.

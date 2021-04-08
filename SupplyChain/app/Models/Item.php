@@ -32,6 +32,18 @@ class Item extends Model
     
     }
 
+    public function getTypeAttribute($val){
+
+        return ucwords($val);
+
+    }
+
+    public function setTypeAttribute($val){
+
+        $this->attributes['type']=ucwords($val);
+    
+    }
+
     // public function subitem(){
 
     //     // One to one relation. function is getting subitem where item_id matches.

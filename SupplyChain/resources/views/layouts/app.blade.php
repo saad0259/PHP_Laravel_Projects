@@ -245,6 +245,26 @@
 
 
             <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#subitem-info" aria-expanded="false" aria-controls="subitem-info">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Subitem Info</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="subitem-info">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/subitem">View All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/subitem/create">Add New</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
+
+            <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#admin-info" aria-expanded="false" aria-controls="admin-info">
                 <i class="menu-icon typcn typcn-coffee"></i>
                 <span class="menu-title">Admin Info</span>
