@@ -33,6 +33,12 @@ class User extends Model
 
     }
 
+    public function setNameAttribute($val){
+
+        $this->attributes['name']=ucwords($val);
+    
+    }
+
     public function getImageAttribute($val){
 
         $full_path=$this->directory.$val;
@@ -40,11 +46,6 @@ class User extends Model
 
     }
     
-    public function setNameAttribute($val){
-
-        $this->attributes['name']=ucwords($val);
-    
-    }
 
     public static function scopeLatestCreated($query){
 

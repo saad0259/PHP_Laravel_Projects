@@ -15,7 +15,7 @@
 
        
 
-        <input type="hidden" name="_method" value="PUT">
+        {{-- <input type="hidden" name="_method" value="PUT"> --}}
 
 
         <div class="form-group col-md-6">

@@ -17,8 +17,6 @@ class AddItemsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            
-
             $table->timestamps();
             $table->softDeletes();
         });

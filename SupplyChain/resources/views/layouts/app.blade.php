@@ -36,7 +36,7 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
           <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +90 301 6903908</li>
+            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +92 301 6903908</li>
             <li class="nav-item dropdown language-dropdown">
               <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="d-inline-flex mr-0 mr-md-3">
@@ -223,6 +223,26 @@
                 </ul>
               </div>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#item-info" aria-expanded="false" aria-controls="item-info">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">Item Info</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="item-info">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/item">View All</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/item/create">Add New</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </li>
+
 
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#admin-info" aria-expanded="false" aria-controls="admin-info">

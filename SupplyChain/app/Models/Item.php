@@ -12,22 +12,32 @@ class Item extends Model
     use HasFactory;
     use SoftDeletes;
 
-    //protected $table='';
-    // protected $primarykey='id';
-
     protected $fillable=[   ///// Use this to allow mass assignment
-        'Name',
+        'name',
         'type'
     ];
 
     protected $dates=['deleted_at'];
 
-    public function subitem(){
 
-        // One to one relation. function is getting subitem where item_id matches.
-        return $this->hasOne('App\Models\Subitem'); //it will search for item_id in Subitem model. Add 'somename_id' parameter with 'App\modelname' if you have a different name for item_id
+    public function getNameAttribute($val){
+
+        return ucwords($val);
 
     }
+
+    public function setNameAttribute($val){
+
+        $this->attributes['name']=ucwords($val);
+    
+    }
+
+    // public function subitem(){
+
+    //     // One to one relation. function is getting subitem where item_id matches.
+    //     return $this->hasOne('App\Models\Subitem'); //it will search for item_id in Subitem model. Add 'somename_id' parameter with 'App\modelname' if you have a different name for item_id
+
+    // }
 
     public function subitems(){
 
