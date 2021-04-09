@@ -34,8 +34,8 @@
 
           
           {!! Form::label('grade','Grade (optional)') !!}
-          {!! Form::text('grade', null,['class'=>'form-control', 'placeholder' => 'Grade e.g. 1,2'] ) !!}
-
+          {{-- {!! Form::text('grade', null,['class'=>'form-control', 'placeholder' => 'Grade e.g. 1,2'] ) !!} --}}
+          {!! Form::number('grade', null, ['class' => 'form-control','min'=>1,'max'=>5, 'placeholder' => 'Grade e.g. 1-5', 'step' => '1']) !!}
           </div>
 
 

@@ -26,12 +26,13 @@ class CreateStockRequest extends FormRequest
         return [
             'subitem_id'=>'required',
             'dealer_id'=>'required',
-            'gov_price'=>'required|numeric|min:1|max:9',
-            'available_stock'=>'required|numeric|min:1|max:9',
-            'receive_quantity'=>'numeric|min:1|max:9',
-            'receive_at'=>'numeric|min:1|max:9',
-            'sold_quantity'=>'numeric|min:1|max:9',
-            'sold_at'=>'numeric|min:1|max:9',
+            'gov_price'=>'required|numeric|min:1|max:999999999',
+            'available_stock'=>'required|numeric|min:1|max:999999999',
+            'receive_quantity'=>'numeric|min:1|max:999999999',
+            'receive_at'=>'numeric|min:1|max:999999999',
+            'sold_quantity'=>'numeric|min:1|max:999999999',
+            'sold_at'=>'numeric|min:1|max:999999999',
+            'date'=>'required|date',
 
             
 

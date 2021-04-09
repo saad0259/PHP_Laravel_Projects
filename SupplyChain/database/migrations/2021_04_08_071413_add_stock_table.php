@@ -24,6 +24,7 @@ class AddStockTable extends Migration
             $table->decimal('sold_at', 10)->nullable();
             $table->decimal('gov_price', 10)->nullable();
             $table->integer('unit_id')->unsigned()->nullable();
+            $table->date('date')->nullable()->default(new DateTime());
             $table->timestamps();
             $table->softDeletes();
         });

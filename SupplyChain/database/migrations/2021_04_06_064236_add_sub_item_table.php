@@ -16,7 +16,7 @@ class AddSubItemTable extends Migration
         Schema::create('subitems', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('grade');
+            $table->decimal('grade', 10)->nullable();
             $table->integer('item_id')->unsigned();
 
             

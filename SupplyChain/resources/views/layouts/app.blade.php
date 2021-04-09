@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+    <title>Supply Chain</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href={{url("/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css")}}>
     <link rel="stylesheet" href={{url("/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css")}}>
@@ -186,7 +186,7 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
-            <li class="nav-item nav-profile">
+            {{-- <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
                   <img class="img-xs rounded-circle" src="/assets/images/faces/my_dp.png" alt="profile image">
@@ -197,7 +197,7 @@
                   <p class="designation">Site Developer</p>
                 </div>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item nav-category">Admin  Menu</li>
             <li class="nav-item">
               <a class="nav-link" href="/dashboard">

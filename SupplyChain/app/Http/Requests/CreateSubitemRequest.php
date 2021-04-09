@@ -26,6 +26,8 @@ class CreateSubitemRequest extends FormRequest
         return [
             'name'=>'required|max:75',
             'item_id'=>'required',
+            'grade'=>'numeric|min:1|max:5',
+
             
         ];
     }

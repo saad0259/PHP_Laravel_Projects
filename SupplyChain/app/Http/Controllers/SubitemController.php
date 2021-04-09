@@ -53,7 +53,6 @@ class SubitemController extends Controller
     public function show($id)
     {
         $subitem=Subitem::findOrFail($id);
-        $items=Item::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
         return view('subitem.show',compact('subitem'));
     }
 

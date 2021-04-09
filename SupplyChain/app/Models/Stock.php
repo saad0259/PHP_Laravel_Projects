@@ -23,7 +23,26 @@ class Stock extends Model
         'sold_quantity',
         'sold_at',
         'gov_price',
-        'unit_id'
+        'unit_id',
+        'date'
     ];
+
+
+    public function dealer(){
+
+        return $this->belongsTo('App\Models\Dealer');
+        
+    }
+
+    public function subitem(){
+
+        return $this->belongsTo('App\Models\Subitem');
+        
+    }
+    public function Unit(){
+
+        return $this->belongsTo('App\Models\Unit');
+        
+    }
 
 }

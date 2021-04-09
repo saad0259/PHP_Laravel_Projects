@@ -48,6 +48,12 @@ class Subitem extends Model
     
     }
 
+    public function stocks(){
+
+        return $this->hasMany('App\Models\Stock');
+        
+    }
+
     public function item(){
 
         // inverse relation. function is getting item where subitem belongs.

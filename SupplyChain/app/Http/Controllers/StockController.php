@@ -7,6 +7,8 @@ use App\Models\Subitem;
 use App\Models\Unit;
 use App\Models\Dealer;
 use App\Models\Stock;
+use App\Http\Requests\CreateStockRequest;
+
 
 class StockController extends Controller
 {
@@ -17,9 +19,10 @@ class StockController extends Controller
      */
     public function index()
     {
-        //
+        $stocks=Stock::get();
+        return view('stock.index',compact('stocks'));
+        //return $stocks;
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -39,9 +42,10 @@ class StockController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateStockRequest $request)
     {
-        //
+        Stock::create($request->all());
+        return redirect('/stock');
     }
 
     /**
@@ -52,7 +56,8 @@ class StockController extends Controller
      */
     public function show($id)
     {
-        //
+        $stock=Stock::findOrFail($id);
+        return view('stock.show',compact('stock'));
     }
 
     /**

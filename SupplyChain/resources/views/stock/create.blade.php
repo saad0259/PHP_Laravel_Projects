@@ -5,6 +5,28 @@
 @section('content') 
 
 
+@if (count($errors)>0)
+
+<div class="alert alert-danger">
+
+  <ul>
+  @foreach ($errors->all() as $error)
+  
+  
+  <li>
+    {{$error}}
+  </li>
+
+
+
+  @endforeach
+  </ul>
+</div>
+  
+@endif
+
+
+
 <div class="card">
     <div class="card-body">
       <h4 class="card-title text-center" style="font-size:25px;">Add New Stock Entry</h4>
@@ -30,26 +52,37 @@
           
         </div>
 
+        
+
         <div class="form-group col-md-6">
 
             {!! Form::label('unit_id','Unit') !!}
-            {{ Form::select('unit_id', $units, null, ['class'=>'form-control', 'placeholder' => 'Please Select Item ...','required' => 'required']) }}
+            {{ Form::select('unit_id', $units, null, ['class'=>'form-control', 'placeholder' => 'Please Select Unit ...','required' => 'required']) }}
   
           
         </div>
 
 
         <div class="form-group col-md-6">
+
+          {!! Form::label('date','Date') !!}
+          {!! Form::date('date', new DateTime(), ['class'=>'form-control', 'required' => 'required']) !!}
+        
+      </div>
+
+
+
+        <div class="form-group col-md-6">
           
             {!! Form::label('receive_quantity','Received Stock') !!}
-            {!! Form::number('receive_quantity', null, ['class' => 'form-control', 'placeholder' => 'Stock received from supplier today', 'step' => '1']) !!}
+            {!! Form::number('receive_quantity', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Stock received from supplier today', 'step' => '1']) !!}
   
         </div>
 
         <div class="form-group col-md-6">
           
             {!! Form::label('receive_at','Received Stock Price Per Unit') !!}
-            {!! Form::number('receive_at', null, ['class' => 'form-control', 'placeholder' => 'Price per unit of Received Stock', 'step' => '1']) !!}
+            {!! Form::number('receive_at', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Price per unit of Received Stock', 'step' => '1']) !!}
   
         </div>
 
@@ -57,35 +90,32 @@
         <div class="form-group col-md-6">
           
             {!! Form::label('sold_quantity','Sold Stock Quantity') !!}
-            {!! Form::number('sold_quantity', null, ['class' => 'form-control', 'placeholder' => 'Quantity of Stock Sold Today', 'step' => '1']) !!}
+            {!! Form::number('sold_quantity', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Quantity of Stock Sold Today', 'step' => '1']) !!}
   
         </div>
 
         <div class="form-group col-md-6">
           
             {!! Form::label('sold_at','Sold Stock Price Per Unit') !!}
-            {!! Form::number('sold_at', null, ['class' => 'form-control', 'placeholder' => 'Price per unit of Sold Stock', 'step' => '1']) !!}
+            {!! Form::number('sold_at', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Price per unit of Sold Stock', 'step' => '1']) !!}
   
         </div>
 
         <div class="form-group col-md-6">
-          
-            {!! Form::label('gov_price','Government Price') !!}
-            {!! Form::number('gov_price', null, ['class' => 'form-control', 'placeholder' => 'Price per unit given by Government', 'step' => '1']) !!}
-  
-        </div>
 
-
-
-        <div class="form-group col-md-6">
-
-          
           {!! Form::label('available_stock','Available Stock') !!}
-          {!! Form::number('available_stock', null, ['class' => 'form-control', 'placeholder' => 'Available Stock', 'step' => '1']) !!}
+          {!! Form::number('available_stock', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Available Stock', 'step' => '1']) !!}
 
         </div>
 
 
+               
+        <div class="form-group col-md-6">
+          
+          {!! Form::label('gov_price','Government Price') !!}
+          {!! Form::number('gov_price', null, ['class' => 'form-control','min'=>1,'max'=>999999999, 'placeholder' => 'Price per unit given by Government', 'step' => '1']) !!}
+
+      </div>
 
         <div class="form-group col-md-12">
 
@@ -98,27 +128,7 @@
     </div>
   </div>
 
-    @if (count($errors)>0)
-
-    <div class="alert alert-danger">
-
-      <ul>
-      @foreach ($errors->all() as $error)
-      
-      
-      <li>
-        {{$error}}
-      </li>
-
-
-
-      @endforeach
-      </ul>
-    </div>
-      
-    @endif
-
-
+   
 
 
 @endsection
