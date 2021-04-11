@@ -99,6 +99,8 @@ class SubitemController extends Controller
     {
         $subitem=Subitem::findOrFail($id);
 
+        $subitem->stocks()->delete();
+
         $subitem->delete();
 
         return redirect('/subitem');

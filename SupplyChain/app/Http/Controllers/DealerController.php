@@ -109,6 +109,8 @@ class DealerController extends Controller
     {
         $dealer=Dealer::findOrFail($id);
 
+        $dealer->stocks()->delete();
+
         $dealer->delete();
 
         return redirect('/dealer');
