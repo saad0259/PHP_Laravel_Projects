@@ -68,7 +68,17 @@ class StockController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stock=Stock::findOrFail($id);
+        $subitems=Subitem::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        $dealers=Dealer::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+        $units=Unit::all()->sortBy('name', SORT_NATURAL | SORT_FLAG_CASE)->pluck('name', 'id');
+
+        $data['subitems']=$subitems;
+        $data['dealers']=$dealers;
+        $data['units']=$units;
+        $data['stock']=$stock;
+
+        return view('stock.edit',compact('data'));
     }
 
     /**
@@ -78,9 +88,11 @@ class StockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateStockRequest $request, $id)
     {
-        //
+        $stock=Stock::findOrFail($id);
+        $stock->update($request->all());
+        return view('stock.show',compact('stock'));
     }
 
     /**
@@ -91,6 +103,10 @@ class StockController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stock=Stock::findOrFail($id);
+
+        $stock->delete();
+
+        return redirect('/stock');
     }
 }

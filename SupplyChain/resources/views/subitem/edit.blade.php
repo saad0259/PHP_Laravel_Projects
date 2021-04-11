@@ -51,14 +51,17 @@
 
         {!! Form::close() !!}
 
-      </form>
-        {!! Form::open(['method'=>'DELETE', 'action'=>['SubitemController@destroy',$data['subitem']->id] ]) !!}
 
-        
+
+    
+        {!! Form::open(['method'=>'DELETE', 'action'=>['SubitemController@destroy',$data['subitem']->id] ]) !!}
 
         {!! Form::submit('Delete', ['class'=>'btn btn-danger mr-2']) !!}
 
         {!! Form::close() !!}
+
+
+        
 
     </div>
   </div>
