@@ -36,6 +36,8 @@
           <div class="col-sm-4 my-2">{{$dealer->address}}</div>
           <div class="col-sm-4"></div>
 
+          
+
           <div class="form-group col-md-12">
 
             <div id="map" style="height: 400px;"></div>
@@ -73,8 +75,26 @@
 
 
 
-        </div>
+      </div>
 
+
+      @foreach ($dealer->stocks() as $dealer)
+            
+            <tr>
+              
+
+              
+                <td>  <a href="">  hello <a> </td>
+              
+               
+                
+                
+                
+              </tr>
+           
+
+                
+            @endforeach
         
      
     </div>
