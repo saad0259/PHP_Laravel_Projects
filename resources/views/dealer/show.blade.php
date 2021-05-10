@@ -99,21 +99,17 @@
           <tbody>
 
             @foreach ($dealer->stocks as $stock)
+            
             <tr>
-              
 
-              
-            <td><a href="{{route('stock.show', $stock->id)}}" class="btn btn-primary">View</a></td>
-              <td>{{$stock->date}}</td>  
+                <td><a href="{{route('stock.show', $stock->id)}}" class="btn btn-primary">View</a></td>
+                <td>{{$stock->date}}</td>  
                 <td><a href="{{route('subitem.show', $stock->subitem->id)}}">  {{$stock->subitem->name}} <a></td>
                 <td>{{$stock->available_stock}} ({{$stock->unit->name}})</td>
                 <td>{{$stock->sold_quantity}} ({{$stock->unit->name}})</td>
                 <td>{{$stock->sold_at}}</td>
                 <td>{{$stock->gov_price}}</td>
-               
-                
-                
-                
+
               </tr>
            
 
