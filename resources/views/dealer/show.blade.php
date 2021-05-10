@@ -36,6 +36,8 @@
           <div class="col-sm-4 my-2">{{$dealer->address}}</div>
           <div class="col-sm-4"></div>
 
+          
+
           <div class="form-group col-md-12">
 
             <div id="map" style="height: 400px;"></div>
@@ -73,8 +75,56 @@
 
 
 
-        </div>
+      </div>
 
+
+      <div class="mt-5 pt-5" style="overflow: auto !important;">
+
+      <h2>Recent Stocks of Dealer</h2>
+      
+      <table class="table table-hover" >
+          <thead>
+            <tr>
+            <th></th>
+              <th>Date</th>
+              <th>Item </th>
+              <th>Available Stock</th>
+              <th>Quantity Sold</th>
+              <th>Sale Price</th>
+              <th>Government Price</th>
+            
+
+            </tr>
+          </thead>
+          <tbody>
+
+            @foreach ($dealer->stocks as $stock)
+            <tr>
+              
+
+              
+            <td><a href="{{route('stock.show', $stock->id)}}" class="btn btn-primary">View</a></td>
+              <td>{{$stock->date}}</td>  
+                <td><a href="{{route('subitem.show', $stock->subitem->id)}}">  {{$stock->subitem->name}} <a></td>
+                <td>{{$stock->available_stock}} ({{$stock->unit->name}})</td>
+                <td>{{$stock->sold_quantity}} ({{$stock->unit->name}})</td>
+                <td>{{$stock->sold_at}}</td>
+                <td>{{$stock->gov_price}}</td>
+               
+                
+                
+                
+              </tr>
+           
+
+                
+            @endforeach
+
+          </tbody>
+        </table>
+      
+      
+      </div>
         
      
     </div>
