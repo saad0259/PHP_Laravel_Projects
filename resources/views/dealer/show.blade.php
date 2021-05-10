@@ -99,7 +99,6 @@
           <tbody>
 
             @foreach ($dealer->stocks as $stock)
-            
             <tr>
               
 
