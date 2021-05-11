@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateDealerRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Dealer;
 
 class DealerController extends Controller
@@ -17,6 +18,7 @@ class DealerController extends Controller
     {
         $dealers=Dealer::paginate(10); // latestcreated() is a custom queryScope
 
+        $user= Auth::user();
         return view('dealer.index',compact('dealers'));
     }
 
