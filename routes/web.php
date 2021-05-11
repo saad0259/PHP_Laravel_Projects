@@ -37,46 +37,53 @@ require __DIR__.'/auth.php';
 Route::group(['middleware'=>'auth'],function(){
 
     Route::resource('/dealer','DealerController');
-
-});
-
-
-Route::group(['middleware'=>'auth'],function(){
-
     Route::resource('/user','UserController');
-
-
-});
-
-
-Route::group(['middleware'=>'auth'],function(){
-
     Route::resource('/item','ItemController');
-
-
-});
-
-
-Route::group(['middleware'=>'auth'],function(){
-
     Route::resource('/subitem','SubitemController');
-
-
-});
-
-Route::group(['middleware'=>'auth'],function(){
-
     Route::resource('/unit','UnitController');
-
-
-});
-
-Route::group(['middleware'=>'auth'],function(){
-
     Route::resource('/stock','StockController');
 
 
+
 });
+
+
+// Route::group(['middleware'=>'auth'],function(){
+
+//     Route::resource('/user','UserController');
+
+
+// });
+
+
+// Route::group(['middleware'=>'auth'],function(){
+
+//     Route::resource('/item','ItemController');
+
+
+// });
+
+
+// Route::group(['middleware'=>'auth'],function(){
+
+//     Route::resource('/subitem','SubitemController');
+
+
+// });
+
+// Route::group(['middleware'=>'auth'],function(){
+
+//     Route::resource('/unit','UnitController');
+
+
+// });
+
+// Route::group(['middleware'=>'auth'],function(){
+
+//     Route::resource('/stock','StockController');
+
+
+// });
 
 Route::get('/register', function () {
     return view('auth.login');

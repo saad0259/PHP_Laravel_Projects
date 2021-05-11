@@ -400,7 +400,7 @@
               <footer class="footer">
                 <div class="container-fluid clearfix">
                   <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © DCO Office Vehari</span>
-                  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Made with ❤ by <a href="https://www.fiverr.com/team_technest" >Team TechNest</a> </span>
+                  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Made with ❤ by <a href="https://techforgery.com/" title="Awesome Mobile & Web Apps" style="font-size:20px" >Tech Forgery</a> </span>
                 </div>
               </footer>
               <!-- partial -->
