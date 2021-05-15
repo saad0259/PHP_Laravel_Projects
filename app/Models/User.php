@@ -77,5 +77,11 @@ class User extends Authenticatable
 
         return $query->orderBy('updated_at','desc')->get();
     }
+
+    public function isadmin(){
+
+        return $this->belongsTo('App\Models\Role');
+        
+    }
     
 }
