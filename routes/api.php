@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Dealer;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/dealers', function(){
 
-    return "Hello from APi";
+    $dealers= Dealer::all();
+    return $dealers;
 
 });
 
